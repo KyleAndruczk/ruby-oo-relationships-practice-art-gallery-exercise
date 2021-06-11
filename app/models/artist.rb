@@ -34,7 +34,7 @@ class Artist
 
   def self.most_prolific
     paintings_per_year = self.all.max do |artist1, artist2| 
-      (artist1.paintings.count / artist1.years_experience) <=> (artist2.paintings.count / artist2.years_experience)
+      (artist1.paintings.count.to_f / artist1.years_experience) <=> (artist2.paintings.count.to_f / artist2.years_experience)
     end
   end
 
